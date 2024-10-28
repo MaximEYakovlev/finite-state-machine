@@ -5,13 +5,13 @@ const machine = {
     // actions for state transition
     transitions: {
         OFF: {
-            press() { this.state = 'ON'; }
+            press: function () { this.state = 'ON'; }
         },
         ON: {
-            press() { this.state = 'BLINK'; }
+            press: function () { this.state = 'BLINK'; }
         },
         BLINK: {
-            press() { this.state = 'OFF'; }
+            press: function () { this.state = 'OFF'; }
         },
     },
 
@@ -26,3 +26,12 @@ const machine = {
         }
     }
 };
+
+// usage
+const flashlight = Object.create(machine);
+
+console.log(flashlight.state); // OFF
+flashlight.dispatch('press');
+console.log(flashlight.state); // ON
+flashlight.dispatch('press');
+console.log(flashlight.state); // BLINK
