@@ -1,4 +1,4 @@
 export interface IStateMachine {
     getState(): string;
-    gispatch(action: string): void;
+    dispatch(action: string): void;
 }
