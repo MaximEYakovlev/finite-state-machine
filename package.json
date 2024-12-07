@@ -1,0 +1,16 @@
+{
+  "name": "finite-state-machine",
+  "version": "1.0.0",
+  "description": "finite-state-machine",
+  "main": "StateMachine.ts",
+  "scripts": {
+    "dev": "ts-node TS/StateMachine.ts"
+  },
+  "keywords": [],
+  "author": "Maxim Yakovlev",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
