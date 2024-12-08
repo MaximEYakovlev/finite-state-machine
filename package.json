@@ -4,7 +4,7 @@
   "description": "finite-state-machine",
   "main": "StateMachine.ts",
   "scripts": {
-    "dev": "ts-node TS/StateMachine.ts"
+    "dev": "ts-node index.ts"
   },
   "keywords": [],
   "author": "Maxim Yakovlev",
