@@ -14,7 +14,7 @@ export class OffState implements IState {
 
     getTransitions(): Map<string, () => void> {
         return new Map([
-            ['press', () => this.machine.setState('On')]
+            ['turnOn', () => this.machine.setState('On')]
         ]);
     }
 }

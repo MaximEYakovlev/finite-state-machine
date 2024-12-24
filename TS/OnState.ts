@@ -14,7 +14,7 @@ export class OnState implements IState {
 
     getTransitions(): Map<string, () => void> {
         return new Map([
-            ['press', () => this.machine.setState('Blink')]
+            ['turnOff', () => this.machine.setState('Off')]
         ]);
     }
 }
