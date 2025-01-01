@@ -1,25 +1,30 @@
-import { StateMachine } from "./TS/StateMachine";
+import { StateMachine } from './TS/StateMachine';
 
+function demoAllScenarios() {
+    const machine = new StateMachine();
 
-const ledController = new StateMachine('Off');
+    console.log(`Initial State: ${machine.getState()}`);
 
-// entering 'off' state
-console.log(`initial state: ${ledController.getState()}`);
-// exiting 'off' state
+    machine.dispatch('turnOn');
+    console.log(`Current State: ${machine.getState()}`);
 
-// entering 'on' state
-ledController.setState('On');
-// exiting 'on' state
+    machine.dispatch('press');
+    console.log(`Current State: ${machine.getState()}`);
 
-console.log(`state: ${ledController.getState()}`);
+    machine.dispatch('turnOff');
+    console.log(`Current State: ${machine.getState()}`);
 
-// entering 'blink' state
-ledController.setState('Blink');
-// exiting 'blink' state
+    machine.setState('Blink');
+    console.log(`Current State: ${machine.getState()}`);
 
-console.log(`state: ${ledController.getState()}`);
+    machine.dispatch('press');
+    console.log(`Current State: ${machine.getState()}`);
 
-// entering 'off' state
-ledController.setState('Off');
+    try {
+        machine.setState('InvalidState');
+    } catch (error) {
+        console.error('Caught error:', error);
+    }
+}
 
-console.log(`state: ${ledController.getState()}`);
+demoAllScenarios();
